@@ -3,11 +3,11 @@ package TheBigDev.modelo;
 import javax.persistence.*;
 @Entity
 @Table(name = "clientes")
-public abstract class Cliente {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="tipoCliente")
+public class Cliente {
 
+    @Id
     @Column(name = "email")
     private String email;
 
@@ -19,9 +19,6 @@ public abstract class Cliente {
 
     @Column(name = "domicilio")
     private String domicilio;
-
-    @Column(name = "tipoCliente")
-    protected String tipoCliente;
 
     @Column(name = "calcAnual")
     protected float calcAnual;
@@ -65,9 +62,15 @@ public abstract class Cliente {
         this.domicilio = domicilio;
     }
 
-    public abstract String tipoCliente( );
-    public abstract float calcAnual();
-    public abstract float descuentoEnv();
+    public String tipoCliente() {
+        return "";
+    }
+
+    public float calcAnual() { return calcAnual; }
+
+    public float descuentoEnv() {
+        return descuentoEnv;
+    }
 
     @Override
     public String toString() {
@@ -76,9 +79,9 @@ public abstract class Cliente {
                 ", nif='" + nif + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", domicilio='" + domicilio + '\'' +
-                ", tipoCliente='" + tipoCliente + '\'' +
-                ", calcAnual='" + calcAnual + '\'' +
-                ", descuentoEnv='" + descuentoEnv + '\'' +
+                ", tipoCliente='" + tipoCliente() + '\'' +
+                ", calcAnual='" + calcAnual() + '\'' +
+                ", descuentoEnv='" + descuentoEnv() + '\'' +
                 '}';
     }
 }

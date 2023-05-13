@@ -2,11 +2,11 @@ package TheBigDev.modelo;
 
 import TheBigDev.modelo.dao.FabricaDao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ListaPedidos {
 
-    public ArrayList<Pedido> getListaPedidos() {
+    public List<Pedido> getListaPedidos() {
         return FabricaDao.crePedidoDao().list();
     }
 
@@ -30,7 +30,7 @@ public class ListaPedidos {
         return getListaPedidos().isEmpty();
     }
 
-    public ArrayList<Pedido> getArrayList() {
+    public List<Pedido> getArrayList() {
         return getListaPedidos();
     }
 

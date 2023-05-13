@@ -2,11 +2,11 @@ package TheBigDev.modelo;
 
 import TheBigDev.modelo.dao.FabricaDao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ListaClientes {
 
-    public ArrayList<Cliente> getListaClientes() {
+    public List<Cliente> getListaClientes() {
         return FabricaDao.creClientesDao().list();
     }
 
@@ -30,7 +30,7 @@ public class ListaClientes {
         return getListaClientes().isEmpty();
     }
 
-    public ArrayList<Cliente> getArrayList() {
+    public List<Cliente> getArrayList() {
         return getListaClientes();
     }
 

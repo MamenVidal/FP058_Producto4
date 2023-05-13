@@ -1,16 +1,23 @@
 package TheBigDev.modelo;
 
+import javax.persistence.*;
+@Entity
+@DiscriminatorValue("estandar")
 public class ClienteEstandar extends Cliente {
+
+    public ClienteEstandar() {
+        super();
+    }
+
     public ClienteEstandar(String email, String nif, String nombre, String domicilio) {
         super(email, nif, nombre, domicilio);
-        this.tipoCliente = "estandar";
-        this.calcAnual = (float)0.00;
-        this.descuentoEnv = (float)0.00;
+        this.calcAnual = 0.00f;
+        this.descuentoEnv = 0.00f;
     }
 
     @Override
     public String tipoCliente() {
-        return tipoCliente;
+        return "estandar";
     }
 
     @Override
@@ -22,5 +29,4 @@ public class ClienteEstandar extends Cliente {
     public float descuentoEnv() {
         return descuentoEnv;
     }
-
 }

@@ -19,6 +19,8 @@ public class HibernateUtil {
             // Configura las clases de entidad que deseas mapear
             configuration.addAnnotatedClass(Articulo.class);
             configuration.addAnnotatedClass(Cliente.class);
+            configuration.addAnnotatedClass(ClientePremium.class);
+            configuration.addAnnotatedClass(ClienteEstandar.class);
             configuration.addAnnotatedClass(Pedido.class);
 
             //apply configuration property settings to StandardServiceRegistryBuilder

@@ -9,6 +9,7 @@
         <property name="hibernate.connection.username">thebigdev</property>
         <property name="hibernate.connection.password">thebigdev2023</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
         <!-- <property name="connection.username"/> -->
         <!-- <property name="connection.password"/> -->
 

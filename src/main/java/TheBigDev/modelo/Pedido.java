@@ -7,9 +7,6 @@ import java.time.LocalDateTime;
 @Table(name = "pedidos")
 public class Pedido {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "numero")
     private int numero;
 
@@ -29,6 +26,8 @@ public class Pedido {
 
     @Column(name = "enviado")
     private Boolean enviado;
+
+    public Pedido() {}
 
     public Pedido(int numero, Cliente cliente, Articulo articulo, int cantidad, LocalDateTime fechaHora,
             Boolean enviado) {
